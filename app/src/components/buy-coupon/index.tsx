@@ -1,11 +1,11 @@
 import { useEffect, useState } from 'react';
 import { useAppDispatch } from '@/lib/hooks/useAppDispatch';
-import { addItem } from '@/lib/store/slices/cartSlice';
 import { formatters } from '@/lib/utils/formatters';
-import { Member } from '@/types/member';
-import { Coupon } from '@/types/coupon';
 import { useActivityService } from '@/lib/hooks/useActivityService';
 import { useToast } from '@/lib/hooks/useToast';
+// import { Member } from '@/types';
+import { Coupon } from '@/models/coupon';
+import { Member } from '@/models/member';
 
 interface BuyCouponProps {
   memberInfo: Member;
@@ -35,7 +35,7 @@ export function BuyCoupon({ memberInfo, onClose, refresh }: BuyCouponProps) {
 
   const getCoupons = async () => {
     try {
-      const response = await getActivity();
+      const response: any = await getActivity();
       setCouponList(response.data);
     } catch (error: any) {
       showError(error?.error?.error || error?.message);

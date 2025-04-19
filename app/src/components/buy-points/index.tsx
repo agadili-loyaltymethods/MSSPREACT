@@ -1,5 +1,4 @@
-import { useState } from 'react';
-import { Dialog } from '@mui/material';
+
 import { useForm, Controller } from 'react-hook-form';
 
 interface BuyPointsProps {
