@@ -1,0 +1,61 @@
+```scss
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --primary: #e86a10;
+    --primary-light: #ff8f3d;
+    --primary-dark: #c45100;
+    --primary-bg: #fff7ed;
+    --primary-hover: rgba(232, 106, 16, 0.1);
+    --tier-green: #76b900;
+    --tier-green-light: #8ed600;
+    --tier-green-dark: #5c8f00;
+  }
+
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+  }
+}
+
+@layer utilities {
+  .loading {
+    @keyframes loading {
+      0% { transform: translateX(-100%); }
+      100% { transform: translateX(100%); }
+    }
+    animation: loading 2s ease-in-out infinite;
+  }
+}
+
+// Custom styles
+.c-loader {
+  display: none !important;
+}
+
+.nav-item {
+  border-bottom: 2px solid #fff;
+  
+  &:hover, &.active {
+    background-color: #f0f3f5;
+    border-bottom: 3px solid var(--primary);
+
+    .mat-icon, label {
+      color: var(--primary);
+    }
+  }
+}
+
+.small-icon {
+  font-size: 12px;
+  width: 12px;
+  height: 12px;
+  vertical-align: -webkit-baseline-middle;
+}
+```
