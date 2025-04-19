@@ -3,9 +3,10 @@ import axios from 'axios';
 import { useAuth } from './useAuth';
 import { useAlert } from './useAlert';
 import { useMember } from './useMember';
-import { Member } from '../models/member';
 import { useDispatch } from 'react-redux';
-import { addMember } from '../states/actions/member.action';
+import { addMember } from '@/lib/store/slices/memberSlice';
+import { Member } from '@/models/member';
+// import { addMember } from '../states/actions/member.action';
 
 export const useLogin = () => {
   const [pendingLoginRequest, setPendingLoginRequest] = useState<Promise<string> | null>(null);
@@ -33,8 +34,8 @@ export const useLogin = () => {
         auth.login(response.data.token);
 
         try {
-          const member = await getMember();
-          dispatch(addMember({ member }));
+          const member: Member = await getMember();
+          dispatch(addMember(member));
           localStorage.setItem('loyaltyId', member.loyaltyId);
         } catch (error: any) {
           errorAlert(error?.response?.data?.error || error?.message);

@@ -6,10 +6,25 @@ import { Streaks } from '../models/streaks';
 
 const API_BASE_URL = import.meta.env.VITE_REST_URL;
 const RC_API_BASE_URL = import.meta.env.VITE_RC_REST_URL;
+interface MemberResponse{
+  data: MemberData[];
+}
+
+interface ActivityHistoryResponse{
+  data: ActivityHistory[] ;
+}
+
+interface StreakResponse{
+  data: Streaks[] ;
+}
+
+interface MemberData{
+  member: Member;
+}
 
 export const useMember = () => {
   const getMember = useCallback(async (loyaltyId: string = '1001'): Promise<Member> => {
-    const response = await axios.get(`${API_BASE_URL}/api/v1/members/${loyaltyId}/profile`, {
+    const response: MemberResponse = await axios.get(`${API_BASE_URL}/api/v1/members/${loyaltyId}/profile`, {
       params: {
         linked: true,
         divide: true,
@@ -91,14 +106,14 @@ export const useMember = () => {
   }, []);
 
   const getActivityHistory = useCallback(async (memberId: string): Promise<ActivityHistory[]> => {
-    const response = await axios.get(`${RC_API_BASE_URL}/api/v1/activityhistories`, {
+    const response: ActivityHistoryResponse = await axios.get(`${RC_API_BASE_URL}/api/v1/activityhistories`, {
       params: { query: JSON.stringify({ memberID: memberId }) }
     });
     return response.data;
   }, []);
 
   const getStreaks = useCallback(async (id: string): Promise<Streaks[]> => {
-    const response = await axios.get(`${API_BASE_URL}/streaks`, {
+    const response: StreakResponse = await axios.get(`${API_BASE_URL}/streaks`, {
       params: { query: id }
     });
     return response.data;

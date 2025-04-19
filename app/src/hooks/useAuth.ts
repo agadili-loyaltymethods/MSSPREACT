@@ -1,11 +1,12 @@
+import { AuthHelper } from '@/lib/utils/auth-helper';
 import { useState, useCallback, useEffect } from 'react';
-import { getToken, setToken, removeToken, isAuthenticated } from '../helpers/auth.helper';
+// import { getToken, setToken, removeToken, isAuthenticated } from '../lib/utils/auth-helper';
 
 export const useAuth = () => {
-  const [isAuthenticatedState, setIsAuthenticatedState] = useState<boolean>(isAuthenticated());
+  const [isAuthenticatedState, setIsAuthenticatedState] = useState<boolean>(AuthHelper.isAuthenticated());
 
   const updateAuthStatus = useCallback(() => {
-    setIsAuthenticatedState(isAuthenticated());
+    setIsAuthenticatedState(AuthHelper.isAuthenticated());
   }, []);
 
   useEffect(() => {
@@ -13,12 +14,12 @@ export const useAuth = () => {
   }, [updateAuthStatus]);
 
   const login = useCallback((token: string) => {
-    setToken(token);
+    AuthHelper.setToken(token);
     updateAuthStatus();
   }, [updateAuthStatus]);
 
   const logout = useCallback(() => {
-    removeToken();
+    AuthHelper.removeToken();
     updateAuthStatus();
   }, [updateAuthStatus]);
 
