@@ -1,4 +1,4 @@
-```tsx
+
 import { useState, useEffect } from 'react';
 import { useLocation } from 'react-router-dom';
 import { RewardsWallet } from '../rewards-wallet';
@@ -63,4 +63,3 @@ export function Rewards() {
     </div>
   );
 }
-```

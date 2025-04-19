@@ -1,4 +1,4 @@
-```tsx
+
 import { useEffect, useState } from 'react';
 import { useActivityService } from '@/lib/hooks/useActivityService';
 import { useToast } from '@/lib/hooks/useToast';
@@ -73,4 +73,3 @@ export function Campaigns() {
     </div>
   );
 }
-```

@@ -1,4 +1,4 @@
-```tsx
+
 import { useEffect, useState } from 'react';
 import { useAppSelector } from '@/lib/hooks/useAppSelector';
 import { useToast } from '@/lib/hooks/useToast';
@@ -85,4 +85,3 @@ export function EarnedBenefits() {
     </div>
   );
 }
-```

@@ -1,4 +1,4 @@
-```tsx
+
 import { useEffect, useState } from 'react';
 import { useAppSelector } from '@/lib/hooks/useAppSelector';
 import { useMemberService } from '@/lib/hooks/useMemberService';
@@ -259,4 +259,3 @@ export function PurchaseHistory() {
     </div>
   );
 }
-```

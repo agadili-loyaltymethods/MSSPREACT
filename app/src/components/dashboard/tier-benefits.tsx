@@ -1,4 +1,4 @@
-```tsx
+
 import { NoData } from '../common/no-data';
 
 interface TierBenefitsProps {
@@ -65,4 +65,3 @@ export function TierBenefits({ benefits, isLoading }: TierBenefitsProps) {
     </div>
   );
 }
-```

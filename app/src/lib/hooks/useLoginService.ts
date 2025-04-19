@@ -1,4 +1,4 @@
-```typescript
+
 import { useMemo } from 'react';
 import api from '@/lib/axios';
 
@@ -36,4 +36,3 @@ export function useLoginService() {
     getToken,
   }), []);
 }
-```

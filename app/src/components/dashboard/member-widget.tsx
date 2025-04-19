@@ -1,4 +1,4 @@
-```tsx
+
 import { Member } from '@/types/member';
 
 interface MemberWidgetProps {
@@ -53,4 +53,3 @@ export function MemberWidget({ memberInfo }: MemberWidgetProps) {
     </div>
   );
 }
-```

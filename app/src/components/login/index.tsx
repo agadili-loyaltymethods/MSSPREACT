@@ -1,4 +1,4 @@
-```tsx
+
 import { useState, useEffect } from 'react';
 import { useNavigate, useLocation } from 'react-router-dom';
 import { useForm } from 'react-hook-form';
@@ -122,4 +122,3 @@ export function Login() {
     </div>
   );
 }
-```

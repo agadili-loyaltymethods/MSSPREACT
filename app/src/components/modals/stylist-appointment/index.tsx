@@ -1,4 +1,4 @@
-```tsx
+
 import { useEffect, useState } from 'react';
 import { formatters } from '@/lib/utils/formatters';
 import { Loader } from '@/components/loader';
@@ -72,4 +72,3 @@ export function StylistAppointment({ data, onClose }: StylistAppointmentProps) {
     </div>
   );
 }
-```

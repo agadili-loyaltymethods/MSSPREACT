@@ -1,4 +1,4 @@
-```tsx
+
 import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { useAppSelector } from '@/lib/hooks/useAppSelector';
@@ -79,4 +79,3 @@ export function RevertReward({ data, onClose }: RevertRewardProps) {
     </div>
   );
 }
-```

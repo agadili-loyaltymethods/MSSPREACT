@@ -1,4 +1,4 @@
-```tsx
+
 import { ReactNode } from 'react';
 import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
 import { Provider } from 'react-redux';
@@ -26,4 +26,3 @@ export function AppProvider({ children }: AppProviderProps) {
     </Provider>
   );
 }
-```

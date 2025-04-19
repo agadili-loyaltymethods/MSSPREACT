@@ -1,4 +1,4 @@
-```tsx
+
 interface RedeemDialogProps {
   coupon: {
     desc: string;
@@ -56,4 +56,3 @@ export function RedeemDialog({ coupon, onClose }: RedeemDialogProps) {
     </div>
   );
 }
-```

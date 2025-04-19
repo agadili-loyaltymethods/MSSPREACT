@@ -1,4 +1,4 @@
-```tsx
+
 import { useEffect, useState } from 'react';
 import { useAppSelector } from '@/lib/hooks/useAppSelector';
 import { useActivityService } from '@/lib/hooks/useActivityService';
@@ -102,4 +102,3 @@ export function Dashboard() {
     </div>
   );
 }
-```

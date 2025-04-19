@@ -1,4 +1,4 @@
-```tsx
+
 interface PointsBalanceWidgetProps {
   providerPoints: Array<{
     provider: string;
@@ -35,4 +35,3 @@ export function PointsBalanceWidget({ providerPoints }: PointsBalanceWidgetProps
     </div>
   );
 }
-```

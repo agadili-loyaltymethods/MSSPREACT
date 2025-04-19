@@ -1,4 +1,4 @@
-```tsx
+
 import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { useAppSelector } from '@/lib/hooks/useAppSelector';
@@ -172,4 +172,3 @@ export function ModalQuiz({ data, onClose }: ModalQuizProps) {
     </div>
   );
 }
-```

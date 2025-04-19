@@ -1,4 +1,4 @@
-```tsx
+
 import { useEffect, useState } from 'react';
 import { useAppDispatch } from '@/lib/hooks/useAppDispatch';
 import { useLocationService } from '@/lib/hooks/useLocationService';
@@ -78,4 +78,3 @@ export function Locations() {
     </div>
   );
 }
-```

@@ -1,4 +1,4 @@
-```tsx
+
 import { useState } from 'react';
 import { Loader } from '@/components/loader';
 
@@ -104,4 +104,3 @@ export function StyleQuiz({ onClose }: StyleQuizProps) {
     </div>
   );
 }
-```

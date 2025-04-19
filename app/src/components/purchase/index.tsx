@@ -1,4 +1,4 @@
-```tsx
+
 import { useEffect, useState } from 'react';
 import { useNavigate, useLocation } from 'react-router-dom';
 import { useProductService } from '@/lib/hooks/useProductService';
@@ -114,4 +114,3 @@ export function Purchase() {
     </div>
   );
 }
-```

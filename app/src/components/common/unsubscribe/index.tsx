@@ -1,4 +1,4 @@
-```tsx
+
 import { useEffect } from 'react';
 import { Subscription } from 'rxjs';
 
@@ -9,4 +9,3 @@ export function useUnsubscribe(subscriptions: Subscription[]) {
     };
   }, [subscriptions]);
 }
-```

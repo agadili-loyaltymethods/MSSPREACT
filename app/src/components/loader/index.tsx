@@ -1,4 +1,4 @@
-```tsx
+
 export function Loader() {
   return (
     <div className="flex flex-col items-center justify-center gap-5 mt-25">
@@ -9,4 +9,3 @@ export function Loader() {
     </div>
   );
 }
-```

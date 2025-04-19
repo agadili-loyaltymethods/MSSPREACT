@@ -169,4 +169,3 @@ export class CheckoutHelper {
         0
       );
 }
-```

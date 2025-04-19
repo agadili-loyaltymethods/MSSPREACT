@@ -1,4 +1,4 @@
-```tsx
+
 import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { useAppDispatch } from '@/lib/hooks/useAppDispatch';
@@ -107,4 +107,3 @@ export function Product({ product }: ProductProps) {
     </div>
   );
 }
-```

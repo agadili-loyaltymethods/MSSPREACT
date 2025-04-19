@@ -1,4 +1,4 @@
-```tsx
+
 interface TierStatusWidgetProps {
   widget: any;
   isEncore: boolean;
@@ -61,4 +61,3 @@ export function TierStatusWidget({ widget, isEncore }: TierStatusWidgetProps) {
     </div>
   );
 }
-```

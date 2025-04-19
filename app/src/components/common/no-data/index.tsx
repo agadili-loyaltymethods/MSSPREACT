@@ -1,4 +1,4 @@
-```tsx
+
 import { ReactNode } from 'react';
 
 interface NoDataProps {
@@ -10,4 +10,3 @@ export function NoData({ children }: NoDataProps) {
     <p className="text-base">{children}</p>
   );
 }
-```

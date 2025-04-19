@@ -1,4 +1,4 @@
-```tsx
+
 import { Dialog } from '@mui/material';
 import { cn } from '@/lib/utils';
 
@@ -54,4 +54,3 @@ export function CommonModal({
     </div>
   );
 }
-```

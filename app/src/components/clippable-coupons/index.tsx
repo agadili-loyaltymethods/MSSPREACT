@@ -1,4 +1,4 @@
-```tsx
+
 import { useEffect, useState } from 'react';
 import { useAppSelector } from '@/lib/hooks/useAppSelector';
 import { useSegmentService } from '@/lib/hooks/useSegmentService';
@@ -114,4 +114,3 @@ export function ClippableCoupons() {
     </div>
   );
 }
-```

@@ -1,4 +1,4 @@
-```tsx
+
 import { ReactNode } from 'react';
 
 interface SectionHeadProps {
@@ -10,4 +10,3 @@ export function SectionHead({ children }: SectionHeadProps) {
     <div className="text-lg font-semibold m-5">{children}</div>
   );
 }
-```

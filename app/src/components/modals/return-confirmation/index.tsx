@@ -1,4 +1,4 @@
-```tsx
+
 interface ReturnConfirmationProps {
   onClose: (confirmed: boolean) => void;
 }
@@ -37,4 +37,3 @@ export function ReturnConfirmation({ onClose }: ReturnConfirmationProps) {
     </div>
   );
 }
-```

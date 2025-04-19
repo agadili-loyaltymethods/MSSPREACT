@@ -1,4 +1,4 @@
-```tsx
+
 import { formatters } from '@/lib/utils/formatters';
 
 interface LineItemProps {
@@ -30,4 +30,3 @@ export function LineItem({ lineItem }: LineItemProps) {
     </div>
   );
 }
-```
