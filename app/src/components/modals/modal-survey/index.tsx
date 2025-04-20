@@ -4,7 +4,7 @@ import { useNavigate } from 'react-router-dom';
 import { useAppSelector } from '@/lib/hooks/useAppSelector';
 import { useActivityService } from '@/lib/hooks/useActivityService';
 import { useToast } from '@/lib/hooks/useToast';
-import { ExternalCoupons } from '@/types/enums';
+import { ExternalCoupons } from '@/enums/external-coupons';
 import { Loader } from '@/components/loader';
 
 interface ModalSurveyProps {
@@ -41,7 +41,7 @@ export function ModalSurvey({ data, onClose }: ModalSurveyProps) {
     };
 
     try {
-      const response = await getActivity(payload, true);
+      const response: any = await getActivity(payload);
       const pointsPurse = response.data.purses.find((purse: any) => purse.name === 'Anywhere Points');
       if (pointsPurse) {
         const points = pointsPurse.new - pointsPurse.prev;

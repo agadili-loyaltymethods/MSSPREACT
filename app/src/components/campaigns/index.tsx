@@ -19,7 +19,7 @@ export function Campaigns() {
 
   const getCoupons = async () => {
     try {
-      const response = await getActivity();
+      const response: any = await getActivity();
       setCampaigns(response.data);
     } catch (error: any) {
       showError(error?.error?.error || error?.message);

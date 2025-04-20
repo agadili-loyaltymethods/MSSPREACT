@@ -6,10 +6,9 @@ import { useAppDispatch } from '@/lib/hooks/useAppDispatch';
 import { clearCart, addItem, removeItem } from '@/lib/store/slices/cartSlice';
 import { useActivityService } from '@/lib/hooks/useActivityService';
 import { useToast } from '@/lib/hooks/useToast';
-import { formatters } from '@/lib/utils/formatters';
 import { NoData } from '../common/no-data';
-import { PaymentCards } from '@/types/enums';
 import { CheckoutHelper } from '@/lib/utils/checkout-helper';
+import { PaymentCards } from '@/enums/cc-type';
 
 const HEMMING = 'Hemming';
 const DISCOUNT_CATEGORY = 'Discount';
@@ -28,7 +27,7 @@ export function Checkout() {
   const [maxAllowedValue, setMaxAllowedValue] = useState(0);
   const [isHemmingAvailable, setIsHemmingAvailable] = useState(false);
   const [bestOffers, setBestOffers] = useState<any[]>([]);
-  const [discountLineItems, setDiscountLineItems] = useState<any[]>([]);
+  const [discountLineItems, setDiscountLineItems] = useState<never[]>([]);
   const [shippingProducts, setShippingProducts] = useState<any[]>([]);
   const [shippingList, setShippingList] = useState<string[]>([]);
   const [subTotal, setSubTotal] = useState(0);
@@ -92,7 +91,7 @@ export function Checkout() {
 
     setIsLoading(true);
     try {
-      const response = await getActivity(
+      const response: any = await getActivity(
         CheckoutHelper.createRepricePayload(
           totalAmount,
           prepareLineItems(true),
@@ -122,7 +121,7 @@ export function Checkout() {
   const getAccrualPoints = async (persist: boolean) => {
     setIsLoading(true);
     try {
-      const response = await getActivity(
+      const response: any = await getActivity(
         CheckoutHelper.createAccrualPayload(
           totalAmount,
           persist ? prepareLineItems() : (repricedTicket?.lineItems ?? prepareLineItems()),

@@ -3,9 +3,9 @@ import { useEffect, useState } from 'react';
 import { useAppSelector } from '@/lib/hooks/useAppSelector';
 import { useSegmentService } from '@/lib/hooks/useSegmentService';
 import { useToast } from '@/lib/hooks/useToast';
-import { Segment } from '@/types/segment';
 import { CardMiniSkeleton } from '../card-mini-skeleton';
 import { NoData } from '../common/no-data';
+import { Segment } from '@/models/segment';
 
 export function ClippableCoupons() {
   const [segments, setSegments] = useState<Segment[]>([]);
@@ -24,15 +24,15 @@ export function ClippableCoupons() {
   const getSegments = async () => {
     setIsLoading(true);
     try {
-      const segmentsResponse = await getAllSegments(JSON.stringify({ "ext.marketing": true }));
+      const segmentsResponse: any = await getAllSegments(JSON.stringify({ "ext.marketing": true }));
       setSegments(segmentsResponse);
 
       const query = JSON.stringify({
         member: memberInfo._id,
-        segment: { $in: segmentsResponse.map(segment => segment._id) }
+        segment: { $in: segmentsResponse.map((segment: any) => segment._id) }
       });
 
-      const memberSegmentsResponse = await getMemberSegments(5, query);
+      const memberSegmentsResponse: any = await getMemberSegments(5, query);
       setMemberSegments(memberSegmentsResponse);
     } catch (error: any) {
       showError(error?.error?.error || error?.message);

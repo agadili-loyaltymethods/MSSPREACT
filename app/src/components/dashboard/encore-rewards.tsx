@@ -4,7 +4,6 @@ import { useAppSelector } from '@/lib/hooks/useAppSelector';
 import { useActivityService } from '@/lib/hooks/useActivityService';
 import { useToast } from '@/lib/hooks/useToast';
 import { AppTimer } from '../app-timer';
-import { NoData } from '../common/no-data';
 
 interface EncoreRewardsProps {
   isLoading: boolean;
@@ -25,7 +24,7 @@ export function EncoreRewards({ isLoading, setStreakSkeleton }: EncoreRewardsPro
 
   const getStreakInfo = async (isRefresh = false) => {
     try {
-      const response = await getActivity({
+      const response: any = await getActivity({
         type: "Streak Progress",
         srcChannelType: "Web",
         srcChannelID: location,

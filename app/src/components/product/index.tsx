@@ -18,23 +18,27 @@ export function Product({ product }: ProductProps) {
 
   const addToCart = () => {
     dispatch(addItem({ ...product, quantity }));
-    showSuccess('Item successfully added to your cart.', {
-      action: {
-        label: 'Go to Cart',
-        onClick: () => navigate('/checkout')
-      }
-    });
+    showSuccess('Item successfully added to your cart.'
+    //   , {
+    //   action: {
+    //     label: 'Go to Cart',
+    //     onClick: () => navigate('/checkout')
+    //   }
+    // }
+  );
   };
 
   const removeFromCart = () => {
     setQuantity(1);
     dispatch(removeItem(product.sku));
-    showSuccess('Item successfully removed from your cart.', {
-      action: {
-        label: 'Go to Cart',
-        onClick: () => navigate('/checkout')
-      }
-    });
+    showSuccess('Item successfully removed from your cart.'
+    //   , {
+    //   action: {
+    //     label: 'Go to Cart',
+    //     onClick: () => navigate('/checkout')
+    //   }
+    // }
+  );
   };
 
   const onQuantityChange = (event: React.ChangeEvent<HTMLSelectElement>) => {

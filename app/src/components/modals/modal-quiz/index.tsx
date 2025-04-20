@@ -4,8 +4,8 @@ import { useNavigate } from 'react-router-dom';
 import { useAppSelector } from '@/lib/hooks/useAppSelector';
 import { useActivityService } from '@/lib/hooks/useActivityService';
 import { useToast } from '@/lib/hooks/useToast';
-import { ExternalCoupons } from '@/types/enums';
 import { Loader } from '@/components/loader';
+import { ExternalCoupons } from '@/enums/external-coupons';
 
 interface ModalQuizProps {
   data: {
@@ -42,7 +42,7 @@ export function ModalQuiz({ data, onClose }: ModalQuizProps) {
     
     if (valid) {
       try {
-        const response = await getActivity({ ...payload, couponCode: ExternalCoupons.QUIZ_WON }, true);
+        const response: any = await getActivity({ ...payload, couponCode: ExternalCoupons.QUIZ_WON });
         setStatus('won');
         const pointsPurse = response.data.purses.find((purse: any) => purse.name === 'Points');
         const points = pointsPurse.new - pointsPurse.prev;

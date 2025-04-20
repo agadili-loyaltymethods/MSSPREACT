@@ -1,5 +1,5 @@
+import { Member } from "@/models/member";
 
-import { Member } from '@/types/member';
 
 interface MemberWidgetProps {
   memberInfo: Member;

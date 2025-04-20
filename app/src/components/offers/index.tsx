@@ -14,7 +14,7 @@ export function Offers() {
   const staticDate = new Date('10/11/2024');
 
   const memberInfo = useAppSelector(state => state.member);
-  const location = useAppSelector(state => state.location.location);
+  const location: any = useAppSelector(state => state.location.location);
   const { getMemberOffers } = useMemberService();
   const { showError } = useToast();
   const { openExternalLink } = useTokenDetails();
@@ -27,7 +27,7 @@ export function Offers() {
 
   const getOffers = async () => {
     try {
-      const [promo, globalOffers] = await Promise.all([
+      const [promo, globalOffers]: any = await Promise.all([
         getMemberOffers(memberInfo._id, location.number ?? location),
         getMemberOffers(memberInfo._id, location.number ?? location)
       ]);

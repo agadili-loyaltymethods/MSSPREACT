@@ -27,7 +27,7 @@ export function Locations() {
 
   const fetchLocations = async () => {
     try {
-      const locations = await getLocations();
+      const locations: any = await getLocations();
       const filteredLocations = locations.filter(
         (location: Location) => !location.ext.hideInMSSP
       );

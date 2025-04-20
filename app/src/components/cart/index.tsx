@@ -8,7 +8,7 @@ import { formatters } from '@/lib/utils/formatters';
 export function Cart() {
   const [isOpen, setIsOpen] = useState(false);
   const dispatch = useAppDispatch();
-  const cartItems = useAppSelector((state) => {
+  const cartItems: any = useAppSelector((state) => {
     const cart = state.cart;
     if (cart.items.length === 1 && cart.items[0]?.lineItems) {
       return cart.items[0].lineItems
@@ -21,8 +21,8 @@ export function Cart() {
     return cart.items.filter((item: any) => !item?.type);
   });
 
-  const totalItems = cartItems.reduce((total, item) => total + item.quantity, 0);
-  const totalPrice = cartItems.reduce((total, item) => total + (item.cost * item.quantity), 0);
+  const totalItems = cartItems.reduce((total: any, item: any) => total + item.quantity, 0);
+  const totalPrice = cartItems.reduce((total: any, item: any) => total + (item.cost * item.quantity), 0);
 
   const removeFromCart = (product: any) => {
     dispatch(removeItem(product.sku));

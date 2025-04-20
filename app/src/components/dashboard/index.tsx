@@ -44,7 +44,7 @@ export function Dashboard() {
 
   const getWidgetData = async () => {
     try {
-      const response = await getActivity();
+      const response: any = await getActivity();
       setWidgetData(response.data);
       setWidgetSkeleton(false);
     } catch (error: any) {

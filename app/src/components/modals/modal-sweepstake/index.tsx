@@ -4,7 +4,7 @@ import { useNavigate } from 'react-router-dom';
 import { useAppSelector } from '@/lib/hooks/useAppSelector';
 import { useActivityService } from '@/lib/hooks/useActivityService';
 import { useToast } from '@/lib/hooks/useToast';
-import { ExternalCoupons } from '@/types/enums';
+import { ExternalCoupons } from '@/enums/external-coupons';
 import { Loader } from '@/components/loader';
 
 interface ModalSweepstakeProps {
@@ -37,7 +37,7 @@ export function ModalSweepstake({ data, onClose }: ModalSweepstakeProps) {
     };
 
     try {
-      const result = await getActivity(payload, true);
+      const result: any = await getActivity(payload);
       if (result.data.sweepStakesPoints > 0) {
         const pointsPurse = result.data.purses.find((purse: any) => purse.name === 'Points');
         const points = pointsPurse.new - pointsPurse.prev;

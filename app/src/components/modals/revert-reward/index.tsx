@@ -34,7 +34,7 @@ export function RevertReward({ data, onClose }: RevertRewardProps) {
     };
 
     try {
-      await getActivity(payload, true);
+      await getActivity(payload);
       redirect();
     } catch (error: any) {
       showError(error?.error?.error || error?.message);

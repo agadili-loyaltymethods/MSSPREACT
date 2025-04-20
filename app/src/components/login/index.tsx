@@ -38,7 +38,7 @@ export function Login() {
   const onSubmit = async (data: LoginFormValues) => {
     setShowLoginProgress(true);
     try {
-      const response = await login(data);
+      const response: any = await login(data);
       localStorage.setItem('accessToken', response.accessToken);
       localStorage.setItem('idToken', response.idToken);
       localStorage.setItem('refreshToken', response.refreshToken);

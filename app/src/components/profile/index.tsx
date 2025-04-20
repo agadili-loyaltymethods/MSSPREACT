@@ -14,7 +14,7 @@ export function Profile() {
 
   const memberInfo = useAppSelector(state => state.member);
   const dispatch = useAppDispatch();
-  const { getMember, refreshMember$ } = useMemberService();
+  const { getMember, refreshMember$ }: any = useMemberService();
   const { showError } = useToast();
 
   useEffect(() => {
