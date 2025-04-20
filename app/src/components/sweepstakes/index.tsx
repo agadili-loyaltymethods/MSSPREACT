@@ -1,15 +1,13 @@
 
 import { useState } from 'react';
 import { useAppSelector } from '@/lib/hooks/useAppSelector';
-import { useActivityService } from '@/lib/hooks/useActivityService';
 import { useToast } from '@/lib/hooks/useToast';
-import { ExternalCoupons } from '@/types/enums';
-import { SweepstakesConstant } from '@/lib/constants/sweepstakes';
 import { formatters } from '@/lib/utils/formatters';
 import { CardMiniSkeleton } from '../card-mini-skeleton';
 import { NoData } from '../common/no-data';
 import { ModalSweepstake } from '../modals/modal-sweepstake';
 import { Dialog } from '@mui/material';
+import { SweepstakesConstant } from '@/constants/sweepstakes.constants';
 
 export function Sweepstakes() {
   const [isLoading, setIsLoading] = useState(false);

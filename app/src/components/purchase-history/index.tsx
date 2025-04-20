@@ -1,10 +1,11 @@
 
 import { useEffect, useState } from 'react';
 import { useAppSelector } from '@/lib/hooks/useAppSelector';
-import { useMemberService } from '@/lib/hooks/useMemberService';
+// import { useMemberService } from '@/lib/hooks/useMemberService';
 import { useToast } from '@/lib/hooks/useToast';
 import { formatters } from '@/lib/utils/formatters';
 import { NoData } from '../common/no-data';
+import { useMember } from '@/hooks/useMember';
 
 const LOB = {
   FOOD: 'Food & Beverage',
@@ -19,7 +20,7 @@ export function PurchaseHistory() {
   const [searchTerm, setSearchTerm] = useState('');
 
   const memberInfo = useAppSelector(state => state.member);
-  const { getActivityHistory } = useMemberService();
+  const { getActivityHistory } = useMember();
   const { showError } = useToast();
 
   useEffect(() => {

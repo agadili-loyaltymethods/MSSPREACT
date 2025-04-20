@@ -45,7 +45,7 @@ export function RewardsWallet() {
     setSelectedPointPurse({});
 
     try {
-      const response = await getActivity({
+      const response: any = await getActivity({
         type: 'Personalization',
         date: new Date().toISOString(),
         srcChannelType: 'Web',
@@ -70,14 +70,14 @@ export function RewardsWallet() {
 
   const getVouchers = async () => {
     try {
-      const [memberVouchersResponse, allVouchersResponse] = await Promise.all([
+      const [memberVouchersResponse, allVouchersResponse]: any = await Promise.all([
         getActivity({ type: 'member-vouchers' }),
         getActivity({ type: 'vouchers' })
       ]);
 
       setMemberVouchers(memberVouchersResponse.data.flatMap((voucher: any) => voucher.rewards));
       setAllVouchers(allVouchersResponse.data);
-      setAvailableVouchers();
+      setAvailableVouchersList();
     } catch (error: any) {
       showError(error?.error?.error || error?.message);
     } finally {
@@ -85,7 +85,7 @@ export function RewardsWallet() {
     }
   };
 
-  const setAvailableVouchers = () => {
+  const setAvailableVouchersList = () => {
     const vouchers = allVouchers.filter(voucher => 
       voucher.cost > 0 && 
       memberPoints.find(point => 
@@ -94,10 +94,10 @@ export function RewardsWallet() {
       )
     );
     setAvailableVouchers(vouchers);
-    setAvailableVouchersWithPurse();
+    setAvailableVouchersWithPurseList();
   };
 
-  const setAvailableVouchersWithPurse = () => {
+  const setAvailableVouchersWithPurseList = () => {
     const vouchers = allVouchers.filter(voucher => 
       voucher.cost > 0 && 
       voucher.ext.purseName === selectedPointPurse.key

@@ -6,7 +6,7 @@ import { EarnedBenefits } from '../earned-benefits';
 import { Offers } from '../offers';
 import { ClippableCoupons } from '../clippable-coupons';
 import { Quiz } from '../quiz';
-import { Reward } from '@/types/enums';
+import { Reward } from '@/enums/reward';
 
 export function Rewards() {
   const [selectedTab, setSelectedTab] = useState(0);
@@ -23,7 +23,7 @@ export function Rewards() {
 
   const handleTabChange = (index: number) => {
     setSelectedTab(index);
-    const tabValue = Object.values(Reward)[index];
+    const tabValue: any = Object.values(Reward)[index];
     window.location.hash = tabValue;
   };
 

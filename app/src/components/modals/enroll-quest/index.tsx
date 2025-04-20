@@ -1,5 +1,5 @@
 
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import { Dialog } from '@mui/material';
 import { useForm, Controller } from 'react-hook-form';
 import { Loader } from '@/components/loader';
@@ -77,7 +77,7 @@ export function EnrollQuest({ data, onClose }: EnrollQuestProps) {
                 {...field}
                 multiple
                 className="w-4/5 p-2.5 border border-gray-300 rounded"
-                placeholder="Please select your favorite brands"
+                // placeholder="Please select your favorite brands"
               >
                 {brands.map(brand => (
                   <option key={brand} value={brand}>{brand}</option>
@@ -94,7 +94,7 @@ export function EnrollQuest({ data, onClose }: EnrollQuestProps) {
               <select
                 {...field}
                 className="w-4/5 p-2.5 border border-gray-300 rounded"
-                placeholder="Please select a T-shirt Size"
+                // placeholder="Please select a T-shirt Size"
               >
                 <option value="">Select T-shirt Size</option>
                 {sizes.map(size => (

@@ -3,13 +3,14 @@ import { useState } from 'react';
 import { useAppSelector } from '@/lib/hooks/useAppSelector';
 import { useActivityService } from '@/lib/hooks/useActivityService';
 import { useToast } from '@/lib/hooks/useToast';
-import { ExternalCoupons } from '@/types/enums';
-import { SurveyConstant } from '@/lib/constants/survey';
+// import { ExternalCoupons } from '@/types/enums';
+// import { SurveyConstant } from '@/lib/constants/survey';
 import { formatters } from '@/lib/utils/formatters';
 import { CardMiniSkeleton } from '../card-mini-skeleton';
 import { NoData } from '../common/no-data';
 import { ModalSurvey } from '../modals/modal-survey';
 import { Dialog } from '@mui/material';
+import { SurveyConstant } from '@/constants/survey.constants';
 
 export function Quiz() {
   const [isLoading, setIsLoading] = useState(false);

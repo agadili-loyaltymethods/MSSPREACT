@@ -33,7 +33,7 @@ export function Enroll() {
   const onSubmit = async (data: EnrollFormValues) => {
     setIsSubmitting(true);
     try {
-      const response = await enroll(data);
+      const response: any = await enroll(data);
       if (response.status === 'success') {
         showSuccess('Enrollment successful. Please proceed to log in.');
         navigate('/login', { 

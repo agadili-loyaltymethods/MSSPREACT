@@ -1,11 +1,12 @@
 
 import { useEffect, useState } from 'react';
 import { useNavigate, useLocation } from 'react-router-dom';
-import { useProductService } from '@/lib/hooks/useProductService';
+// import { useProductService } from '@/lib/hooks/useProductService';
 import { useToast } from '@/lib/hooks/useToast';
-import { ProductHelper } from '@/lib/utils/product-helper';
+// import { ProductHelper } from '@/lib/utils/product-helper';
 import { Product } from '../product';
 import { NoData } from '../common/no-data';
+import { useProduct } from '@/hooks/useProduct';
 
 export function Purchase() {
   const [allProducts, setAllProducts] = useState<any[]>([]);
@@ -16,7 +17,7 @@ export function Purchase() {
 
   const navigate = useNavigate();
   const location = useLocation();
-  const { getProducts } = useProductService();
+  const { products }: any = useProduct();
   const { showError } = useToast();
 
   useEffect(() => {
@@ -33,9 +34,10 @@ export function Purchase() {
 
   const fetchProducts = async () => {
     try {
-      const products = await getProducts();
+      //const products: any = await getProducts();
       setAllProducts(products);
-      const categories = ProductHelper.getCategories(products);
+      //const categories = ProductHelper.getCategories(products);
+      const categories: any = Array.from(new Set(products.map((product: any) => product.category).filter(Boolean)));
       setAllCategories(categories);
 
       // Navigate to first category if exists
