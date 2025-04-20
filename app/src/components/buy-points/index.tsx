@@ -62,7 +62,7 @@ export function BuyPoints({ onClose }: BuyPointsProps) {
               <select
                 {...field}
                 className="w-full p-2.5 border border-gray-300 rounded-md"
-                placeholder="Please select required points"
+                // placeholder="Please select required points"
               >
                 <option value="">Select Required Points</option>
                 {pointsList.map((option) => (
@@ -84,7 +84,7 @@ export function BuyPoints({ onClose }: BuyPointsProps) {
               <select
                 {...field}
                 className="w-full p-2.5 border border-gray-300 rounded-md"
-                placeholder="Please select a T-shirt Size"
+                // placeholder="Please select a T-shirt Size"
               >
                 <option value="">Select T-shirt Size</option>
                 {sizes.map((size) => (

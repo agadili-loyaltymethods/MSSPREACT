@@ -29,7 +29,7 @@ export class MemberProgress {
     flightsTooltip: string;
   };
 
-  constructor(baseTier, companionPass) {
+  constructor(baseTier: any, companionPass: any) {
     this.baseTier = {
       points: baseTier.points,
       flights: baseTier.flights,

@@ -1,4 +1,4 @@
-import { format, addLeadingZeros } from 'date-fns';
+import { format } from 'date-fns';
 
 export const dateUtils = {
   getCurrentTimeWithZeroSeconds: (date: Date = new Date()) => {
@@ -9,6 +9,9 @@ export const dateUtils = {
   },
 
   formatDate: (d: Date) => {
+    const addLeadingZeros = (number: number, length: number): string =>{
+      return number.toString().padStart(length, '0');
+    };
     const month = d.getMonth() + 1;
     return `${d.getFullYear()}-${addLeadingZeros(month, 2)}-${addLeadingZeros(d.getDate(), 2)}`;
   },

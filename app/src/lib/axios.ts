@@ -7,14 +7,16 @@ const api = axios.create({
 });
 
 api.interceptors.request.use(
-  (config) => {
+  (config: any) => {
     const token = localStorage.getItem('rcx_auth_token');
-    if (token) {
-      config.headers.Authorization = `Bearer ${token}`;
+    if(config){
+      if (token) {
+        config.headers.Authorization = `Bearer ${token}`;
+      }
+      config.headers['Content-Type'] = 'application/json';
+      config.headers.Accept = 'application/json';
+      config.headers['X-Requested-With'] = 'XMLHttpRequest';
     }
-    config.headers['Content-Type'] = 'application/json';
-    config.headers.Accept = 'application/json';
-    config.headers['X-Requested-With'] = 'XMLHttpRequest';
     return config;
   },
   (error) => Promise.reject(error)

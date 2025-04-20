@@ -13,7 +13,7 @@
   "dependencies": {
     "@hookform/resolvers": "^5.0.1",
     "@reduxjs/toolkit": "^2.5.0",
-    "@vitejs/plugin-react": "^4.3.4",
+    "@vitejs/plugin-react": "^4.4.1",
     "amazon-cognito-identity-js": "^4.4.0",
     "aws-sdk": "^2.768.0",
     "axios": "^1.7.9",
@@ -44,8 +44,7 @@
     "redux": "^5.0.1",
     "request": "^2.88.2",
     "swr": "^2.2.4",
-    "use-sound": "^4.0.1",
-    "zod": "^3.24.3"
+    "zod": "^3.22.4"
   },
   "browserslist": {
     "production": [
@@ -75,6 +74,6 @@
     "postcss": "^8.4.49",
     "tailwindcss": "^3.4.17",
     "typescript": "^5.7.2",
-    "vite": "^6.0.5"
+    "vite": "^5.4.18"
   }
 }

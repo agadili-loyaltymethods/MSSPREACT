@@ -1,51 +1,50 @@
 import { BrowserRouter as Router, Routes, Route, Navigate } from 'react-router-dom';
 import { AuthGuard } from './components/AuthGuard';
-import { DashboardComponent } from './components/dashboard/dashboard.component';
-import { PurchaseHistoryComponent } from './components/purchase-history/purchase-history.component';
-import { PurchaseComponent } from './components/purchase/purchase.component';
-import { RewardsComponent } from './components/rewards/rewards.component';
-import { CheckoutComponent } from './components/checkout/checkout.component';
-import { PurchaseConfirmationComponent } from './components/purchase-confirmation/purchase-confirmation.component';
-import { PageNotFoundComponent } from './components/page-not-found/page-not-found.component';
+import { PageNotFound } from './components/page-not-found';
+import { Dashboard } from './components/dashboard';
+import { Purchase } from './components/purchase';
+import { Rewards } from './components/rewards';
+import { PurchaseHistory } from './components/purchase-history';
+import { Checkout } from './components/checkout';
 
 const App = () => {
   return (
     <Router>
       <Routes>
         <Route path="/" element={<Navigate to="/dashboard" replace />} />
-        <Route path="/page-not-found" element={<PageNotFoundComponent />} />
+        <Route path="/page-not-found" element={<PageNotFound />} />
         
         {/* Protected Routes */}
         <Route path="/dashboard" element={
           <AuthGuard>
-            <DashboardComponent />
+            <Dashboard />
           </AuthGuard>
         } />
         <Route path="/purchase" element={
           <AuthGuard>
-            <PurchaseComponent />
+            <Purchase />
           </AuthGuard>
         } />
         <Route path="/rewards" element={
           <AuthGuard>
-            <RewardsComponent />
+            <Rewards />
           </AuthGuard>
         } />
         <Route path="/purchase-history" element={
           <AuthGuard>
-            <PurchaseHistoryComponent />
+            <PurchaseHistory />
           </AuthGuard>
         } />
         <Route path="/checkout" element={
           <AuthGuard>
-            <CheckoutComponent />
+            <Checkout />
           </AuthGuard>
         } />
-        <Route path="/purchase-confirmation" element={
+        {/* <Route path="/purchase-confirmation" element={
           <AuthGuard>
-            <PurchaseConfirmationComponent />
+            <PurchaseConfirmation />
           </AuthGuard>
-        } />
+        } /> */}
         
         <Route path="*" element={<Navigate to="/page-not-found" replace />} />
       </Routes>
