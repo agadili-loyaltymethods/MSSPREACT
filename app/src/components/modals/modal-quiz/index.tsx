@@ -42,7 +42,7 @@ export function ModalQuiz({ data, onClose }: ModalQuizProps) {
     
     if (valid) {
       try {
-        const response: any = await getActivity({ ...payload, couponCode: ExternalCoupons.QUIZ_WON });
+        const response: any = await getActivity({ ...payload, couponCode: ExternalCoupons.QUIZ_WON }, true);
         setStatus('won');
         const pointsPurse = response.data.purses.find((purse: any) => purse.name === 'Points');
         const points = pointsPurse.new - pointsPurse.prev;

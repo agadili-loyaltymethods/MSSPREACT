@@ -98,7 +98,7 @@ export function Checkout() {
           CheckoutHelper.createTenderItems(paymentType, totalAmount),
           location,
           null
-        )
+        ), persist
       );
 
       setBestOffers(response.data.bestOffers ?? []);
@@ -129,7 +129,7 @@ export function Checkout() {
           location,
           bestOffers,
           null
-        )
+        ), persist
       );
       setEarnSummary(response.data?.earnSummary ?? {});
     } catch (error: any) {
@@ -159,7 +159,7 @@ export function Checkout() {
           location,
           bestOffers,
           null
-        )
+        ), true
       );
       navigate('/purchase-confirmation');
       dispatch(clearCart());

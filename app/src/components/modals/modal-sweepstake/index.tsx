@@ -37,7 +37,7 @@ export function ModalSweepstake({ data, onClose }: ModalSweepstakeProps) {
     };
 
     try {
-      const result: any = await getActivity(payload);
+      const result: any = await getActivity(payload, true);
       if (result.data.sweepStakesPoints > 0) {
         const pointsPurse = result.data.purses.find((purse: any) => purse.name === 'Points');
         const points = pointsPurse.new - pointsPurse.prev;

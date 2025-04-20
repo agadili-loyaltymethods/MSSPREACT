@@ -41,7 +41,7 @@ export function ModalSurvey({ data, onClose }: ModalSurveyProps) {
     };
 
     try {
-      const response: any = await getActivity(payload);
+      const response: any = await getActivity(payload, true);
       const pointsPurse = response.data.purses.find((purse: any) => purse.name === 'Anywhere Points');
       if (pointsPurse) {
         const points = pointsPurse.new - pointsPurse.prev;
