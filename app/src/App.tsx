@@ -6,12 +6,14 @@ import { Purchase } from './components/purchase';
 import { Rewards } from './components/rewards';
 import { PurchaseHistory } from './components/purchase-history';
 import { Checkout } from './components/checkout';
+import { Login } from './components/login';
 
 const App = () => {
   return (
     <Router>
       <Routes>
         <Route path="/" element={<Navigate to="/dashboard" replace />} />
+        <Route path="login" element={<Login />} />
         <Route path="/page-not-found" element={<PageNotFound />} />
         
         {/* Protected Routes */}

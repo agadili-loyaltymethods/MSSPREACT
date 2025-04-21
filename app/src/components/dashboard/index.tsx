@@ -9,6 +9,7 @@ import { PointsBalanceWidget } from './points-balance-widget';
 import { TierBenefits } from './tier-benefits';
 import { EncoreRewards } from './encore-rewards';
 import { CardSkeleton } from '../card-skeleton';
+import { GeneralConstants } from '@/constants/general-constants';
 
 export function Dashboard() {
   const [widgetData, setWidgetData] = useState<any[]>([]);
@@ -33,13 +34,24 @@ export function Dashboard() {
     if (memberInfo) {
       setProviderPoints(
         memberInfo.purses
-          .filter(purse => !purse.name.includes('Status'))
-          .map(purse => ({
+          .filter((purse: any) => !purse.name.includes('Status'))
+          .map((purse: any) => ({
             provider: purse.name,
             balance: purse.availBalance
           }))
       );
     }
+  };
+
+  const getActivityPayload = (coupon: string) => {
+    return {
+      type: coupon === GeneralConstants.streakProgress ? GeneralConstants.streakProgress : 'Personalization',
+      date: new Date().toISOString(),
+      srcChannelType: 'Web',
+      couponCode: coupon === GeneralConstants.streakProgress ? memberInfo?.streaks[0]?._id : coupon,
+      srcChannelID: 'Corporate',
+      loyaltyID: memberInfo?.loyaltyId
+    };
   };
 
   const getWidgetData = async () => {
